@@ -12,6 +12,7 @@
         <module>eureka-server-ribbon</module>
         <module>eureka-client-ribbon</module>
         <module>eureka-ribbon-client</module>
+        <module>eureka-feign-client</module>
     </modules>
 
     <parent>
