@@ -1,5 +1,6 @@
 package per.jgx.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.loadbalancer.NoOpLoadBalancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -13,8 +14,12 @@ public class RibbonService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "hiErr")
     public String hi(String name) {
         return restTemplate.getForObject("http://eureka-client/hi?name=" + name, String.class);
     }
 
+    public String hiErr(String name) {
+        return name + "err";
+    }
 }
