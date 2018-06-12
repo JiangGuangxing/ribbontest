@@ -1,0 +1,21 @@
+server:
+  port: 9411
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: zipkin-server
+  # mq transfer needs config
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123456
+
+
+
+
+
