@@ -16,6 +16,7 @@
         <module>eureka-monitor-client</module>
         <module>eureka-zuul-client</module>
         <module>zipkin-server</module>
+        <module>service-api</module>
     </modules>
 
     <parent>
